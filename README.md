@@ -89,13 +89,13 @@ Set your domain
 
 ```bash
 # Replace `glitchtip.dokku.me` with your domain
-dokku config:set GLITCHTIP_DOMAIN=https://glitchtip.dokku.me
+dokku config:set glitchtip GLITCHTIP_DOMAIN=https://glitchtip.dokku.me
 ```
 
 Set a secret key. You can use a third-party service like [Djcrety](https://djecrety.ir/) to generate one.
 
 ```bash
-dokku config:set SECRET_KEY=your_secret_key
+dokku config:set glitchtip SECRET_KEY=your_secret_key
 ```
 
 Create your GlitchTip superuser
