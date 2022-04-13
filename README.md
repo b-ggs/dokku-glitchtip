@@ -63,6 +63,14 @@ Push to your new `dokku` remote to start deploying GlitchTip
 git push dokku main
 ```
 
+Dokku by default does not deploy the GlitchTip Celery worker.
+
+On your Dokku host, run the Celery worker by scaling the `worker` service up to `1`.
+
+```bash
+dokku ps:scale glitchtip worker=1
+```
+
 ### Configure HTTPS/SSL
 
 Set up HTTPS/SSL with your preferred method. Dokku has a [LetsEncrypt plugin](https://github.com/dokku/dokku-letsencrypt) you can use to get certificates.
