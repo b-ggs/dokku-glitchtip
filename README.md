@@ -63,8 +63,54 @@ Push to your new `dokku` remote to start deploying GlitchTip
 git push dokku main
 ```
 
+### Configure HTTPS/SSL
 
+Set up HTTPS/SSL with your preferred method. Dokku has a [LetsEncrypt plugin](https://github.com/dokku/dokku-letsencrypt) you can use to get certificates.
+
+### Configure ports
+
+GlitchTip listens on port 8080
+
+If you have HTTPS/SSL set up, you can configure Dokku to forward HTTPS requests from port 443 to GlitchTip
+
+```bash
+dokku proxy:ports-set glitchtip https:443:8080
+```
+
+If you prefer to use HTTP, though it is highly discouraged to do, you can configure Dokku to forward HTTP requrest from port 80 to GlitchTip
+
+```bash
+dokku proxy:ports-set glitchtip http:80:8080
+```
+
+### Configure GlitchTip
+
+Set your domain
+
+```bash
+# Replace `glitchtip.dokku.me` with your domain
+dokku config:set GLITCHTIP_DOMAIN=https://glitchtip.dokku.me
+```
+
+Set a secret key. You can use a third-party service like [Djcrety](https://djecrety.ir/) to generate one.
+
+```bash
+dokku config:set SECRET_KEY=your_secret_key
+```
+
+Create your GlitchTip superuser
+
+```bash
+dokku run glitchtip ./manage.py createsuperuser
+```
+
+Refer to the [GlitchTip Configuration documentation](https://glitchtip.com/documentation/install#configuration) for other variables you can set such as for e-mail notifications, etc.
+
+### Start using GlitchTip!
+
+You're now fully set up to use GlitchTip! Go to the address you've set for your GlitchTip app and log in with your superuser to get started!
 
 ## References
 
+- [GlitchTip's Configuration Documentation](https://glitchtip.com/documentation/install#configuration)
 - [GlitchTip's meta repo on self-hosting on Heroku and DigitalOcean App Platform](https://gitlab.com/glitchtip/glitchtip)
