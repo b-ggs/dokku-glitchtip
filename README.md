@@ -6,7 +6,7 @@ If you are looking to self-host to Heroku or DigitalOcean App Platform, please r
 
 ## Requirements
 
-- Dokku 0.27.0 (cannot guarantee this works on older versions of Dokku)
+- Dokku 0.28.1 (cannot guarantee this works on older versions of Dokku)
 
 ## Installation
 
