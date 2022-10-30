@@ -1,3 +1,3 @@
-FROM glitchtip/glitchtip:v2.0.6
+FROM glitchtip/glitchtip:v2.0.7
 
 COPY Procfile /code/Procfile

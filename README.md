@@ -1,6 +1,6 @@
 # GlitchTip on Dokku
 
-This repository contains all the information needed to self-host a GlitchTip v2.0.6 instance on Dokku.
+This repository contains all the information needed to self-host a GlitchTip v2.0.7 instance on Dokku.
 
 If you are looking to self-host to Heroku or DigitalOcean App Platform, please refer to [GlitchTip's own meta repo and documentation](https://gitlab.com/glitchtip/glitchtip). This repository is specifically for Dokku only.
 
@@ -77,18 +77,10 @@ Set up HTTPS/SSL with your preferred method. Dokku has a [LetsEncrypt plugin](ht
 
 ### Configure ports
 
-GlitchTip listens on port 8080
-
-If you have HTTPS/SSL set up, you can configure Dokku to forward HTTPS requests from port 443 to GlitchTip
+GlitchTip listens on port 8080. Configure Dokku to forward requests from port 80 and 443 to GlitchTip.
 
 ```bash
-dokku proxy:ports-set glitchtip https:443:8080
-```
-
-If you prefer to use HTTP, though it is highly discouraged to do, you can configure Dokku to forward HTTP requrest from port 80 to GlitchTip
-
-```bash
-dokku proxy:ports-set glitchtip http:80:8080
+dokku proxy:ports-set glitchtip http:80:8080 https:443:8080
 ```
 
 ### Configure GlitchTip
