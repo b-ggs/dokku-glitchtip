@@ -1,6 +1,6 @@
 # GlitchTip on Dokku
 
-This repository contains all the information needed to self-host a GlitchTip v2.0.7 instance on Dokku.
+This repository contains all the information needed to self-host a GlitchTip v2.0.8 instance on Dokku.
 
 If you are looking to self-host to Heroku or DigitalOcean App Platform, please refer to [GlitchTip's own meta repo and documentation](https://gitlab.com/glitchtip/glitchtip). This repository is specifically for Dokku only.
 
