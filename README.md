@@ -92,10 +92,10 @@ Set your domain
 dokku config:set glitchtip GLITCHTIP_DOMAIN=https://glitchtip.dokku.me
 ```
 
-Set a secret key. You can use a third-party service like [Djcrety](https://djecrety.ir/) to generate one.
+Set a secret key.
 
 ```bash
-dokku config:set glitchtip SECRET_KEY=your_secret_key
+dokku config:set glitchtip SECRET_KEY=$(python3 -c "import secrets; print(''.join(secrets.choice([chr(i) for i in range(0x21, 0x7F)]) for i in range(60)));")
 ```
 
 Create your GlitchTip superuser
